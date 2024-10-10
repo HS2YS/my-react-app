@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HelloMessage from './HelloMessage';
 import PeopleList from './PeopleList';
 
 function App() {
-    const people = ["Вова","Анна", "Иван", "Фео"];
+    const [people, setPeople] = useState(["Вова", "Анна", "Иван", "Фео"]);
 
+    const addPerson = () => {
+        const newPerson = prompt("Введите имя нового человека:");
+        if (newPerson) {
+            setPeople([...people, newPerson]);
+        }
+    };
 
     return (
         <div className="App">
@@ -12,6 +18,7 @@ function App() {
             <p>Это мой первый компонент.</p>
             <HelloMessage />
             <PeopleList people={people} />
+            <button onClick={addPerson}>Добавить человека</button>
         </div>
     );
 }
