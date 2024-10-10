@@ -1,12 +1,16 @@
 import React from "react";
 
-function PeopleList({ people }) {
+function PeopleList({ people, onChangeName }) {
     return (
         <div>
-            <h3>Список людей из `props`:</h3>
+            <h3>Список людей с возможностью изменения имени:</h3>
             <ul>
                 {people.map((person, index) => (
-                    <li key={index}>{person}</li>
+                    <li key={index}>
+                        <span>{index + 1}. </span>
+                        {person}
+                        <button onClick={() => onChangeName(index)}>Изменить</button>
+                    </li>
                 ))}
             </ul>
         </div>
