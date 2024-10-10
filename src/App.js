@@ -49,7 +49,7 @@ function App() {
             <button onClick={removeLastPerson}>Удалить последнего человека</button><br />
             <button onClick={sortPeople}>Сортировать от А до Я</button><br />
             <button onClick={reverseSortPeople}>Сортировать от Я до А</button><br /><br /><br />
-            <Form />
+            <Form onAddPerson={(newPerson) => setPeople([...people, newPerson])} />
         </div>
     );
 }
