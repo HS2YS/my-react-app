@@ -1,14 +1,13 @@
 import React from "react";
 
-function PeopleList() {
+function PeopleList({ people }) {
     return (
         <div>
+            <h3>Список людей из `props`:</h3>
             <ul>
-                <h3>Список людей отдельный компонентом</h3>
-                <li>Вова</li>
-                <li>Анна</li>
-                <li>Иван</li>
-                <li>Фео</li>
+                {people.map((person, index) => (
+                    <li key={index}>{person}</li>
+                ))}
             </ul>
         </div>
     );
