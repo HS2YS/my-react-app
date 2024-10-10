@@ -1,5 +1,6 @@
 import React from 'react';
 import HelloMessage from './HelloMessage';
+import PeopleList from './PeopleList';
 
 function App() {
     return (
@@ -7,6 +8,7 @@ function App() {
             <h1>Привет, React!</h1>
             <p>Это мой первый компонент.</p>
             <HelloMessage />
+            <PeopleList />
         </div>
     );
 }
